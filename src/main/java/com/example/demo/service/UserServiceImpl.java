@@ -65,6 +65,11 @@ public class UserServiceImpl implements UserService {
         if (thisUser == null) {
             throw new RuntimeException("Пользователь не существует");
         }
-        userRepository.deleteById(user.getId());
+        userRepository.deleteById(user.getUserId());
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 }

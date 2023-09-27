@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
+import com.example.demo.model.FavoritesMovie;
 import com.example.demo.model.Movie;
-import com.example.demo.model.User;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 
@@ -13,14 +13,13 @@ public interface MovieService {
 
     List<Movie> getAllMovies(Pageable pageable);
 
-    void collectMoviesFromExternalSource();
+    void addMovieToFavorites(Authentication authentication, Movie movie);
 
-    void addMovieToFavorites(User user, Movie movieId);
-
-    void removeMovieFromFavorites(User user,Movie movie);
+    void removeMovieFromFavorites(Authentication authentication,Movie movie);
 
     List<Movie> notInFavoritesMoviesInfo(Authentication authentication);
 
-    List<Movie> FavoritesMoviesInfo(Authentication authentication);
+    List<FavoritesMovie> FavoritesMoviesInfo(Authentication authentication);
 
+    Movie findMovieById(Movie moveId);
 }
