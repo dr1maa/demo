@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public UserDetailsService UserDetailsService(UserRepository userRepository) {
+    public UserDetailsService CustomUserDetailsService(UserRepository userRepository) {
         return new CustomUserDetailsService(userRepository);
     }
 
