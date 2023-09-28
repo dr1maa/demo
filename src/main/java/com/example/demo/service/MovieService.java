@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 
 import java.util.List;
-import java.util.UUID;
+
 
 public interface MovieService {
     Movie saveMovieToDb(Movie movie);
@@ -22,4 +22,5 @@ public interface MovieService {
     List<FavoritesMovie> FavoritesMoviesInfo(Authentication authentication);
 
     Movie findMovieById(Movie moveId);
+    Movie findMovieByTitle(String title);
 }

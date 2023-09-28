@@ -68,9 +68,9 @@ public class MovieServiceImpl implements MovieService {
         List<Movie> allMovies = movieRepository.findAll();
         List<Movie> notInFavoritesMoviesList = new ArrayList<>();
         for (Movie movie : allMovies) {
-            boolean isFavotites = favoritesMovieList.stream()
+            boolean isFavorites = favoritesMovieList.stream()
                     .anyMatch(favoritesMovie -> favoritesMovie.getMovie().equals(movie));
-            if (!isFavotites) {
+            if (!isFavorites) {
                 notInFavoritesMoviesList.add(movie);
             }
         }
@@ -88,6 +88,11 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public Movie findMovieById(Movie moveId) {
         return movieRepository.findMovieById(moveId);
+    }
+
+    @Override
+    public Movie findMovieByTitle(String title) {
+        return movieRepository.findMovieByTitle(title);
     }
 
 
