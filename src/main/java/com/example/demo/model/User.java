@@ -10,7 +10,7 @@ import java.util.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private UUID userId;
 
     @Column(nullable = false, unique = true)
     private String userName;
@@ -32,16 +32,16 @@ public class User {
 
 
 
-    public User(UUID id, String userName, String password, String email, String name) {
-        this.id = id;
+    public User(UUID userId, String userName, String password, String email, String name) {
+        this.userId = userId;
         this.userName = userName;
         this.password = password;
         this.email = email;
         this.name = name;
     }
 
-    public UUID getId() {
-        return id;
+    public UUID getUserId() {
+        return userId;
     }
 
     public String getUserName() {

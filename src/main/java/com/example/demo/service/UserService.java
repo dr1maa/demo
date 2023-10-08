@@ -4,7 +4,7 @@ import com.example.demo.model.User;
 
 public interface UserService {
 
-    User getUserById(User id);
+    User getUserById(User userId);
 
     User register(User user);
 
@@ -13,4 +13,6 @@ public interface UserService {
     User updateUser(User user, User updatedUser);
 
     void deleteUser(User user);
+    User getUserByUsername(String username);
+
 }
